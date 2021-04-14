@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;    
+    width: 100%;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+}
+
+button {
+    height: 55px;
+    width: 205px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.confesion {
+    background-color: rgb(255, 255, 255);
+    margin-top: 15px;
+    padding: 4px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    border-radius: 4px;
+    border: 2px solid aliceblue;
+  }
+  
+  .lastConfesion {
+    margin-bottom: 85px !important;
+  }
+  
+  .confesion-titulo {
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  
+  .confesion-text {
+    margin-bottom: 10px;
+  }
+  
+  .confesion-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
