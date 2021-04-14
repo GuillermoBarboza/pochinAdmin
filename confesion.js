@@ -1,13 +1,13 @@
 let deployedUrl = "https://confesionario-back-end.vercel.app/";
 let confession;
 
-function deleteConfesion(id) {
-  fetch(deployedUrl, {
+function deleteComment(id) {
+  fetch(deployedUrl + 'eliminar/comentarios', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: id,
+    body: JSON.stringify(id)
   }).then((res) => {
     location.reload();
   });
@@ -57,7 +57,7 @@ window.onload = async () => {
 
   Array.from(buttons).map((button) => {
     button.addEventListener("click", (e) => {
-      deleteConfesiont(e.target.id);
+      deleteComment(e.target.id);
     });
   });
 };

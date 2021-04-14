@@ -1,13 +1,15 @@
 let deployedUrl = "https://confesionario-back-end.vercel.app/";
 let confesiones = [];
 
-function deleteComment(id) {
-  fetch(deployedUrl, {
+function deleteConfession(id) {
+    console.log(id);
+    
+  fetch(deployedUrl + 'eliminar/confesion', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: id,
+    body: JSON.stringify(id)
   }).then((res) => {
     location.reload();
   });
@@ -19,7 +21,6 @@ window.onload = async () => {
   const data = await fetch(deployedUrl).then((res) => res.json());
 
   data.map((confesion, key) => {
-    console.log(typeof confesion._id);
 
     let confesionHtml = `
     <div class="confesion ${key === data.length - 1 ? "lastConfesion" : ""}">
@@ -47,7 +48,7 @@ window.onload = async () => {
 
   Array.from(buttons).map((button) => {
     button.addEventListener("click", (e) => {
-      deleteComment(e.target.id);
+      deleteConfession(e.target.id);
     });
   });
 };
