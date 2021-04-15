@@ -2,12 +2,12 @@ let deployedUrl = "https://confesionario-back-end.vercel.app/";
 let confession;
 
 function deleteComment(id) {
-  fetch(deployedUrl + 'eliminar/comentarios', {
+  fetch(deployedUrl + "eliminar/comentarios", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({id})
+    body: JSON.stringify({ id, confesionId: location.search.slice(4) }),
   }).then((res) => {
     location.reload();
   });
